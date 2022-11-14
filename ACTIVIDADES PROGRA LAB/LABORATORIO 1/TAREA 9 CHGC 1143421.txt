@@ -1,0 +1,34 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace T9_CHGC_1143421
+{
+    internal class Program
+    {
+            int Modelo = 0;
+            double valor = 0.00;
+            string marca = "";
+            double IVA = 0.12;
+
+            Console.WriteLine("Ingresa el  modelo de la motocicleta:");
+            Modelo = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Ingresar valor:");
+            precio = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Ingresar marca:");
+            marca = Console.ReadLine();
+
+            Console.WriteLine("Ingrese el % IVA:");
+            IVA = double.Parse(Console.ReadLine());
+
+            mostrarinformacion(Modelo, valor, marca, IVA);
+
+        static void mostrarinformacion(int Modelo, double valor, string marca, double IVA)
+        {
+            double impuesto = precio + (precio * 0.12);
+            double impIVA = (precio * 0.12);
+
+            Console.WriteLine("Marca:" + marca + ". Modelo:" + Modelo + ". Precio sin IVA:" + precio + ". Precio con IVA:" + impuesto + ". Solo IVA:" + impIVA);
