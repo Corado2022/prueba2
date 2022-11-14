@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace L9_CHGC_1143421
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int modelo = 0;
+            double precio = 0.00;
+            string marca = "";
+            bool disponible = false;
+            string SIdisponible = "";
+            double TipoCambioDolar = 7.8;
+            double DescuentoAplicado = 0.00;
+
+            Console.WriteLine("Ingresar modelo del vehiculo:");
+            modelo = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Ingresar el costo");
+            precio = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Ingresar tipo de marca:");
+            marca = Console.ReadLine();
+
+            Console.WriteLine("¿se encuentra disponible?");
+            SIdisponible = (Console.ReadLine());
+
+
+            if (SIdisponible == "Disponible")
+            {
+                disponible = true;
+            }
+
+            Console.WriteLine("Ingresar el  descuento:");
+            DescuentoAplicado = double.Parse(Console.ReadLine());
+
+            mostrarinformacion(modelo, valor, marca, SIdisponible, TipoCambioDolar, DescuentoAplicado);
+
+            Console.ReadKey();
+        }
+        static void mostrarinformacion(int modelo, double precio, string marca, string SIdisponible, double TipoCambioDolar, double DescuentoAplicado)
+        {
+            double descuento = precio - precio * (DescuentoAplicado / 100);
+            double cambio = descuento / TipoCambioDolar;
+            Console.WriteLine("Marca:" + marca + ". Modelo:" + modelo + ". valor:" + descuento + ". Precio en Dolares:" + cambio + ". Mostrar disponibilidad:" + SIdisponible);
